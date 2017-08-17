@@ -3,7 +3,7 @@ Monitor Windows Server Backup Status from Windows Event Log.
 
 Requirements: 
 - Windows Server 2008 or newer
-- Zabbix 3.0 or newer
+- Zabbix 3.2 or newer
 
 # resources/items/triggers
 
