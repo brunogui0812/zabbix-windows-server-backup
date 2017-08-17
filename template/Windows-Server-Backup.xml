@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.2</version>
+    <version>3.0</version>
     <date>2017-08-17T13:45:55Z</date>
     <groups>
         <group>
@@ -68,7 +68,6 @@
                 </item>
             </items>
             <discovery_rules/>
-            <httptests/>
             <macros>
                 <macro>
                     <macro>{$EVENTLOGFILTER}</macro>
@@ -82,35 +81,23 @@
     <triggers>
         <trigger>
             <expression>{Windows Server Backup:eventlog[Microsoft-Windows-Backup,,&quot;Information|Error&quot;,,{$EVENTLOGFILTER}].logseverity()}&lt;&gt;1</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>Backup Failed/Warning</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Windows Server Backup:eventlog[Microsoft-Windows-Backup,,&quot;Information|Error&quot;,,{$EVENTLOGFILTER}].nodata(2d)}=1</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>No Backup Reported in the last 2 days</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
     </triggers>
 </zabbix_export>
